@@ -1,0 +1,89 @@
+#include "../vis_string.bt"
+#include "../vis_mb_vertex_descriptor.bt"
+
+#include "../vis_render_state.bt"
+#include "../vis_effect_config.bt"
+#include "../vis_stride.bt"
+
+#define VERTEXDESC_OFFSET_MASK         0x0fff
+
+char header[4];
+uint32 loader_version;
+
+uint32 magick <format = hex>;
+if (0x4455ABCD != magick) return;
+
+uint32 version;
+
+VisMBVertexDescriptor desc;
+uint vertices_count;
+
+ubyte iMemUsageFlagVertices;
+
+if (version >= 4) { byte iBindFlagVertices; }
+
+if (version >= 3) {
+    ubyte bMeshDataIsBigEndian;
+    char u1[2]; // struct sizeof 2
+}
+
+uint32 ePrimType;
+uint32 iIndexCount;
+uint32 eIndexFormat;
+uint32 iCurrentPrimCount;
+ubyte iMemUsageFlagVertices;
+
+if (version >= 4) {
+    byte iBindFlagIndices;
+}
+
+ubyte bVerticesDoubleBuffered;
+ubyte bIndicesDoubleBuffered;
+if (version >= 5) ubyte bDoubleBufferingFromFile;
+
+VisRenderState render_state;
+ubyte bUseProjection;
+byte channels_count;
+VisString channels[channels_count];
+VisEffectConfig effect_config;
+
+
+local int vertices_per_face = iIndexCount / iCurrentPrimCount;
+local int tell = FTell();
+local int t = FTell();
+
+struct Stride {
+    if (desc.pos_ofs != -1) {
+        FSeek(t + (desc.pos_ofs & VERTEXDESC_OFFSET_MASK));
+        float pos[3];
+    }
+
+    if (desc.normal_ofs != -1) {
+        FSeek(t + (desc.normal_ofs & VERTEXDESC_OFFSET_MASK));
+        float nor[3];
+    }
+
+    if (desc.tex_coord_ofs[0] != -1) {
+        FSeek(t + (desc.tex_coord_ofs[0] & VERTEXDESC_OFFSET_MASK));    
+        float tex[2];
+    }
+    
+    if (desc.color_ofs != -1) {
+        FSeek(t + (desc.color_ofs & VERTEXDESC_OFFSET_MASK));    
+        uint16 col[2];
+    }
+
+    FSeek(t = t + desc.stride);
+};
+
+Stride data[vertices_count]<optimize=false>;
+
+FSeek(tell + vertices_count * desc.stride);
+
+if (eIndexFormat == 16)
+    uint16 indices[iIndexCount];
+else
+    uint32 indices[iIndexCount];
+
+float bounding_box[6];
+int v73;

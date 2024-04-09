@@ -1,0 +1,18 @@
+#ifndef VIS_CONFIG
+#define VIS_CONFIG
+
+#include "../vis_string.bt"
+
+typedef struct {
+    VisString library;
+    VisString name;
+    VisString param;
+} VisConfig <read = VisConfigRead>;
+
+string VisConfigRead(VisConfig &value) {    
+    string s;
+    SPrintf(s, "%s/%s/%s", value.library.value, value.name.value, value.param.value);
+    return s;
+};
+
+#endif // #ifndef VIS_CONFIG

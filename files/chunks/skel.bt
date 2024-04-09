@@ -1,0 +1,24 @@
+#include "../vis_bone.bt"
+
+uint16 version;
+uint16 bone_count;
+VisBone bones[bone_count] <optimize = false>;
+uint16 bone_mask_count;
+
+local int i;
+
+Printf("values = [\n");
+for (i = 0; i < bone_count; ++i) {
+    Printf("\tBone(\"%s\", %d, \"%s\", (%f, %f, %f), (%f, %f, %f, %f)),\n", 
+        bones[i].name.value, 
+        bones[i].parent,
+        (bones[i].parent == -1 ? "" : bones[bones[i].parent].name.value), 
+        bones[i].local_space_position.x.value, 
+        bones[i].local_space_position.y.value, 
+        bones[i].local_space_position.z.value,
+        bones[i].local_space_orientation.x.value,
+        bones[i].local_space_orientation.y.value, 
+        bones[i].local_space_orientation.z.value, 
+        bones[i].local_space_orientation.w.value);
+}
+Printf("]");

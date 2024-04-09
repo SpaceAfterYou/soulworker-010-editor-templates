@@ -1,0 +1,45 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "header.bt"
+#include "vis_string.bt"
+#include "opcode.bt"
+
+typedef struct
+{
+    int id;
+    VisStringShortString value;
+} hash <read=Str("%d / %s", this.id, this.value.value)>;
+
+header head;
+opcode op;
+
+ubyte u1[3];
+
+VisStringShortString mac;
+uint32 packetVersion;
+
+ubyte u2[7];
+
+VisStringShortString steamUserName;
+ushort u3;
+uint64 steamId;
+uint u4;
+ubyte u5[230];
+ubyte u6[790];
+
+VisStringShortString clientVersion;
+
+hash u7[30] <optimize=false>;
+
+uint u8[3];

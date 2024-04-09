@@ -1,0 +1,18 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "chunks/vbin.bt"
+#include "chunks/vchunk.bt"
+
+VBinHeader file_header;
+VChunkHeader chunks_headers[9] <optimize=false>;

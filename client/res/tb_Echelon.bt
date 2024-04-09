@@ -1,0 +1,15 @@
+#include "vis_string.bt"
+
+uint32 count;
+
+struct value {
+    byte v0;
+    uint16 v1;
+    uint16 v2;
+    VisShortString v3;
+    VisShortString v4;
+    uint32 v5;
+    byte q[14]<optimize=false>;
+};
+
+value values[count]<optimize=false>;

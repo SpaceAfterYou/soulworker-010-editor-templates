@@ -1,0 +1,22 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "../vis_vectors.bt"
+
+struct BBBXChunk {
+    vis_vector_3_float min;
+    vis_vector_3_float max;
+};
+
+uint16 count;
+BBBXChunk chunks[count];

@@ -1,0 +1,22 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "../vis_vectors.bt"
+
+vis_vector_3_float u1;
+vis_vector_3_float u1;
+
+vis_quaternion_float u2;
+
+vis_vector_3_float u3;
+vis_vector_3_float u3;

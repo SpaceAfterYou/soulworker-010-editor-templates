@@ -1,0 +1,34 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "header.bt"
+#include "vis_string.bt"
+#include "opcode.bt"
+
+header head;
+opcode op;
+
+uint AccountId;
+byte u1;
+byte IsClearTutorial;
+char Mac[17];
+string ErrorMessage;
+uint ErrorCode;
+byte u2;
+byte LoginType;
+byte u3;
+VisStringShortString AuthId;
+ulong SessionKey;
+byte GameMaster;
+uint Brith;
+uint u4;

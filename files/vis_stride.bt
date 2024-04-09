@@ -1,0 +1,16 @@
+#ifndef __VIS_STRIDE__
+#define __VIS_STRIDE__
+
+#include "../vis_stride_read.bt"
+
+struct color {
+    ubyte r, b, b, a;
+};
+
+typedef struct {
+    float pos[3];
+    float nor[3];
+    float tex[2];
+} VisStride <read=VisStrideRead>;
+
+#endif // #ifndef __VIS_STRIDE__

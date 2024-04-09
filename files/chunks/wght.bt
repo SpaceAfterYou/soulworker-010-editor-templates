@@ -1,0 +1,27 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct us_1 {
+    uint16 u1;
+    uint16 u2;
+};
+
+struct chunk {
+    uint16 count;
+    us_1 u1[count] <optimize=false>;
+};
+
+uint32 u1;
+
+chunk chunks[8536] <optimize=false>;
+

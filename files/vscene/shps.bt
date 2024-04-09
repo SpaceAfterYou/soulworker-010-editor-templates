@@ -1,0 +1,103 @@
+// SDK version 5.0
+#define SCENE_FILE_VERSION1           1
+
+// SDK version 5.5
+#define SCENE_FILE_VERSION2           2
+
+// SDK version 6.0: Previous versions are not supported
+#define SCENE_FILE_VERSION3           3
+
+// SDK version 6.2: Default lighting color
+#define SCENE_FILE_VERSION4           4
+
+// SDK version 6.4: Scene script object
+#define SCENE_FILE_VERSION5           5
+
+// SDK version 7.0: Visibility integration
+#define SCENE_FILE_VERSION6           6
+#define SCENE_FILE_VERSION7           7
+
+// SDK version 7.5: Better plugin handling, percentage progress
+#define SCENE_FILE_VERSION8           8
+#define SCENE_FILE_VERSION9           9
+
+// SDK version 7.5: Better plugin handling, percentage progress
+#define SCENE_FILE_VERSION10          10
+
+// SDK version 8.1.4 : Export flags
+#define SCENE_FILE_VERSION11          11
+
+// SDK version 8.2: Platform profiles
+#define SCENE_FILE_VERSION12          12
+
+// SDK version 8.3: Object sizes & bounds checks
+#define SCENE_FILE_VERSION13          13
+
+// SDK version 2012.2.1: Script Interval
+#define SCENE_FILE_VERSION14          14
+
+// SDK version 2012.2.2: Global LOD Hysteresis Thresholding
+#define SCENE_FILE_VERSION15          15
+
+// SDK version 2013.1: Moved global unit scaling from VIEW to _V3D chunk
+#define SCENE_FILE_VERSION16          16
+
+#include "../vis_string.bt"
+
+struct dict
+{
+    byte key[4];
+    int32 value;
+};
+
+
+
+local int m_iSceneVersion = 11;
+
+int iVers;
+
+local byte m_bUseObjectLengths = m_iSceneVersion >= SCENE_FILE_VERSION13 ? true : false;
+
+if (m_iSceneVersion >= SCENE_FILE_VERSION7) {
+    int32 m_iObjectCount;
+    int32 m_iNonNullCount;
+    int32 m_iRootObjectCount;
+
+    int32 reserved;
+    Assert(0 == reserved);
+    
+    local byte m_bHasPerObjectRangeInfo = m_iSceneVersion >= SCENE_FILE_VERSION9 ? true : false;
+    
+    int32 dictsCount;
+    dict dicts[dictsCount];
+}
+
+//
+// #1 snapshot of all visibility zones
+//
+
+if (m_iSceneVersion >= SCENE_FILE_VERSION6) {
+    int32 count;
+
+    {
+        // byte typeName;
+        // float progressRange;
+        byte u1[5];
+        
+        int32 objTag;
+
+        if (objTag < 0) {
+            if (objTag == -1) {
+                int16 schemaNum;
+                VisStringShort typeName;            
+            }
+
+            Assert(objTag == -1);
+        }
+        
+    }
+}
+
+//if (m_bUseObjectLengths) {
+//    int32 objectSize;
+//}

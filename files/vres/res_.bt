@@ -1,0 +1,32 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local int32 m_iLoadingVersion = 3;
+
+int32 count;
+
+struct entry
+{
+  int32 m_iNameHandle;
+  int32 m_iManagerHandle;
+  int32 m_iCustomIntHandle;
+  int32 m_iFileSize;
+  int32 m_iRawDataEntry;
+  int32 m_fPriority;
+
+  if (m_iLoadingVersion >= 3) {
+    int16 m_iOwnerResourceEntryIndex;
+  }
+};
+
+entry entries[count]<optimize=false>;

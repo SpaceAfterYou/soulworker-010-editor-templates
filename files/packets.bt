@@ -1,0 +1,30 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct header
+{
+    uint16 magick;
+    uint16 size;
+    ubyte protocol;
+    ubyte key;
+};
+
+struct packet
+{
+    header head;
+    ubyte body[head.size - 6];
+};
+
+while(FTell() != FileSize()) {
+    packet packets;
+}

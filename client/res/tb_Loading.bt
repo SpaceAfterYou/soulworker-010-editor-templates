@@ -1,0 +1,12 @@
+uint count;
+
+typedef struct {
+    byte v1;
+    uint16 v2;
+    byte v3;
+    uint16 v4;
+    uint16 v5;
+    byte v6;
+} value;
+
+value values[count];

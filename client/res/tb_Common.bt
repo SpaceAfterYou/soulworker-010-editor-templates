@@ -1,0 +1,11 @@
+#include "vis_string.bt"
+
+struct value {
+    uint32 v0;
+    VisShortString v1;
+    float v2;
+};
+
+uint32 count;
+value values[count]<optimize=false>;
+VisCharShortString crc;

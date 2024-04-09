@@ -1,0 +1,25 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct vis_vector_3_float {
+    float x;
+    float y;
+    float z;
+};
+
+struct vis_quaternion_float {
+    float x;
+    float y;
+    float z;
+    float w;
+};

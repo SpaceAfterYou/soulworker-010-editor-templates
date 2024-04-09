@@ -1,0 +1,12 @@
+#include "vis_string.bt"
+
+uint count;
+
+typedef struct {
+    uint16 id;
+    uint16 v2;
+    VisShortString v3;
+    VisShortString v4;
+} value;
+
+value values[count]<optimize=false>;

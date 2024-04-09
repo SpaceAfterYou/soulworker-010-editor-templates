@@ -1,0 +1,50 @@
+struct mat
+{
+    uint32 indices_start;
+    uint32 indices_count;
+    uint32 u6;
+    uint32 u7;
+    uint32 first_vertex;
+    uint32 num_vertices;
+    uint32 u10;
+    uint32 u11;
+    
+    float bounding_box_x;
+    float bounding_box_y;
+    float bounding_box_z;
+    
+    float bounding_box_max_x;
+    float bounding_box_max_y;
+    float bounding_box_max_z;
+    
+    int32 id;
+    
+    if (version < 2) {
+        if (version == 1) {
+            int32 _1;
+            int16 _2;
+            int16 _3;
+            byte _4;
+            byte _5;
+            float _6;
+            float _7;
+        }
+    }
+    else {
+        int32 geometry_index;
+    }
+};
+
+int32 iSubMeshCount;
+
+if (iSubMeshCount < 0) {
+    int32 version;
+    
+    if (version >= 2) {
+        int32 geometry_count;
+        // geometry check
+    }
+    
+    uint32 count;
+    mat mats[count] <optimize=false>;
+}

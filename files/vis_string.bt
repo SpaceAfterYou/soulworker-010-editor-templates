@@ -1,0 +1,56 @@
+#ifndef VIS_STRING
+#define VIS_STRING
+
+typedef struct {
+    int32 length;
+    if (length > 0) {
+        char value[length] <optimize=false>;
+    } else {
+        local char value = '-';
+    }
+} VisString <read = VisStringRead>;
+
+string VisStringRead(VisString &value) {
+    return value.value;
+};
+
+// ---
+
+
+typedef struct {
+    int16 length;
+    if (length > 0) {
+        char value[length] <optimize=false>;
+    } else {
+        local char value = '-';
+    }
+} VisStringShort <read = VisStringShortRead>;
+
+string VisStringShortRead(VisStringShort &value) {
+    return value.value;
+};
+
+// ---
+
+typedef struct {
+    uint16 length;
+    if (length > 0) {
+        wchar_t value[length] <optimize=false>;
+    } else {
+        wchar_t value[1] = { '-' };
+    }
+} VisShortString <read = VisShortStringRead>;
+
+typedef struct {
+    uint16 length;
+    if (length > 0) {
+        char value[length] <optimize=false>;
+    } else {
+        char value[1] = { '-' };
+    }
+} VisCharShortString <read = VisCharShortStringRead>;
+wstring VisShortStringRead(VisShortString &value) {
+    return value.value;
+};
+
+#endif // #ifndef VIS_STRING

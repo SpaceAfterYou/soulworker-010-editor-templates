@@ -1,0 +1,15 @@
+local uint m_scene_version = 14;
+
+float m_fNearClipPlane;
+float m_fFarClipPlane;
+
+if (m_scene_version >= 2) {
+    float m_vDefaultCamPos[3];
+    float m_DefaultCamRot[9];
+}
+
+if (m_scene_version <= 15) {
+    float m_fUnitScaling;
+}
+
+float m_fFovX;

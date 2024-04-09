@@ -1,0 +1,26 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+
+#ifndef __VIS_STRIDE_READ__
+#define __VIS_STRIDE_READ__
+
+struct VisStride;
+
+string VisStrideRead(VisStride &value) {
+    string s;
+    SPrintf(s, "%f %f %f / %f %f %f / %f %f", value.pos[0], value.pos[1], value.pos[2], value.nor[0], value.nor[1], value.nor[2], value.tex[0], value.tex[1]);
+    return s;
+}
+
+#endif // #ifndef __VIS_STRIDE_READ__

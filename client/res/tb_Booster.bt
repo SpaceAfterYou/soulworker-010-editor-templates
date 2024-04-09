@@ -1,0 +1,53 @@
+#include "vis_string.bt"
+
+struct value {
+    uint16 UInt16;
+    uint16 UInt16;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    byte Byte;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    float Single;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    uint16 UInt16;
+    byte Byte;
+    uint32 UInt32;
+};
+
+uint32 count;
+value values[count]<optimize=false>;
+VisCharShortString crc;

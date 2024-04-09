@@ -1,0 +1,28 @@
+local int i;
+
+for (i = 0; i <= bone_count; i++) {
+    // vis_xor_float(bones[i].local_space_position.x);
+    // vis_xor_float(bones[i].local_space_position.y);
+    // vis_xor_float(bones[i].local_space_position.z);
+
+    // vis_xor_float(bones[i].local_space_orientation.x);
+    // vis_xor_float(bones[i].local_space_orientation.y);
+    // vis_xor_float(bones[i].local_space_orientation.z);
+    vis_xor_float(bones[i].local_space_orientation.w);
+
+    // vis_xor_float(bones[i].inverse_object_space_position.x);
+    // vis_xor_float(bones[i].inverse_object_space_position.y);
+    // vis_xor_float(bones[i].inverse_object_space_position.z);
+
+    // vis_xor_float(bones[i].inverse_object_space_orientation.x);
+    // vis_xor_float(bones[i].inverse_object_space_orientation.y);
+    // vis_xor_float(bones[i].inverse_object_space_orientation.z);
+    vis_xor_float(bones[i].inverse_object_space_orientation.w);
+}
+
+void vis_xor_float(VisFloat& value) {
+    local int i;
+    for (i = 0; i < 4; i++) {
+        value.raw[i] ^= 0x80;
+    }
+}

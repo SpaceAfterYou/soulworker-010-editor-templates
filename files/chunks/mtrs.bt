@@ -1,0 +1,66 @@
+#include "../vis_string.bt"
+#include "vis_config.bt"
+
+struct VisChunk {
+    uint32 stack_depth;
+    char start_chunk_id[4];
+    uint32 chunk_size;
+
+    uint16 version;
+    VisString name;
+    uint32 flags;
+    uint32 ui_sorting_key;
+    float spec_mul;
+    float spec_exp;
+    byte ui_transparency_type;
+    byte ui_deferred_id;
+    
+    if (version >= 3) {
+        float depth_bias;
+    }
+    
+    if (version >= 4) {
+        float depth_bias_clamp;
+        float slope_scaled_depth_bias;
+    }
+    
+    VisString diffuse_map;
+    VisString specular_map;
+    VisString normal_map;
+    
+    if (version >= 2) {
+        uint32 aux_count;
+        if (aux_count > 0) {
+            VisString aux_name[aux_count];
+        }
+    }
+    
+    VisString user_data;
+    uint32 user_flags;
+    uint32 ambient_color;
+    uint32 v19;
+    uint32 v18;
+    float parallax_scale;
+    float parallax_bias;
+    uint32 config_count;
+    VisConfig configs[config_count] <optimize = false>;
+    
+    if (version >= 5) {
+        VisString override_library;
+        VisString override_material;
+    }
+    
+    if (version >= 6) {
+        uint32 ui_mobile_shader_flags;
+    }
+    
+    uint stack_depth;
+    char end_chunk_id[4];
+};
+
+string VisChunkRead(VisChunk &value) {
+    return value.name.value;
+};
+
+uint32 count;
+VisChunk chunks[count] <optimize = false, read = VisChunkRead>;

@@ -1,0 +1,51 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct VisCoords 
+{
+    byte begin;
+    byte end;
+};
+
+struct VisMBVertexDescriptor {
+    const uint MAGICK = 0x1020A0B;
+
+    uint32 magick_start <format = hex>;
+    Assert(!(MAGICK != magick_start));
+    
+    uint32 version;
+    Assert(!(version > 48));
+    
+    uint16 stride;           
+    uint16 pos_ofs;           
+    uint16 color_ofs;         
+    uint16 normal_ofs;        
+    uint16 tex_coord_ofs[16];  
+    uint16 secondary_color_ofs;
+    
+    if (version == 42) {
+        // recompute hash
+    }
+
+    if (version == 48) {
+        byte first_text_coord;
+        byte last_text_coord;
+        uint32 hash;
+    }
+    
+    uint32 magick_end <format = hex>;
+    if (MAGICK == magick_end) {
+        // secondary_color_ofs.begin = -1;
+        // secondary_color_ofs.end = -1;
+    }
+};

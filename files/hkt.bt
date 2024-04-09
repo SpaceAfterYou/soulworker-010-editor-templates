@@ -1,0 +1,68 @@
+typedef struct {
+    byte length;
+   
+    if (length > 0) {
+        char value[length / 2];
+    } else {
+        const char value = '-';
+    }
+} String <read = StringRead>;
+
+string StringRead(String &value) {
+    return value.value;
+};
+
+uint32 magick_1 <format=hex>;
+uint32 magick_2 <format=hex>;
+char v37;
+
+if (v37 < 0) {
+    char q;
+}
+
+local const int64 v3 = v37 / 2;
+
+
+    switch(v3) {
+    case 1:
+        char v38;
+        local const int64 v8 = v38 / 2;
+    
+        switch(v8) {
+            case 4:
+    
+                String version;
+            break;
+        }
+    
+    break;
+    }
+
+byte v43;
+local const int v27 = v43 / 2;
+
+//char v38_2;
+//local const int64 v8_2 = v38_2 / 2;
+
+String s;
+byte version;
+byte parent;
+byte members;
+
+String member;
+byte v54;
+local int v22 = (v54 >> 1) & 0x7FFFFFBF;
+local int v23 = v54 & 1;
+if ( v23 )
+{
+    local int v26 = -v22;
+    local int v61 = -v22;
+}
+else
+{
+    local int v61 = v22;
+    local int v26 = v22;
+}
+
+v26 = v61;
+local int v31 = v26 & 0xF;

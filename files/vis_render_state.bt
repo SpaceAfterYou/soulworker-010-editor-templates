@@ -1,0 +1,24 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "../vis_render_state_flags.bt"
+
+#ifndef VIS_RENDER_STATE
+#define VIS_RENDER_STATE
+
+union VisRenderState {
+    VisRenderStateFlags flags;
+    uint32 all_properties;
+};
+
+#endif // #ifndef VIS_RENDER_STATE

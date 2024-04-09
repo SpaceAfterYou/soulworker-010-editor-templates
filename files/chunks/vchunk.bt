@@ -1,0 +1,24 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct VChunkHeader
+{
+    char id_head[4];
+    uint32 length;
+    byte body[length] <optimize=false>;
+    uint32 stack_depth;
+    char id_tail[4];
+    uint32 tag;
+
+    // Assert(id[0] == id[1]);
+};

@@ -1,0 +1,54 @@
+#include "../vis_string.bt"
+
+typedef union {
+    byte raw[4];
+    float value;
+} VisFloat <read = VisFloatRead>;
+
+string VisFloatRead(VisFloat &value) {
+    string s;
+    SPrintf(s, "%f", value.value);
+    return s;
+};
+
+typedef struct {
+    VisFloat x;
+    VisFloat y;
+    VisFloat z;
+} VisVec3 <read = VisVec3Read>;
+
+string VisVec3Read(VisVec3 &value) {
+    string s;
+    SPrintf(s, "%f / %f / %f", value.x.value, value.y.value, value.z.value);
+    return s;
+};
+
+typedef struct {
+    VisFloat x;
+    VisFloat y;
+    VisFloat z;
+    VisFloat w;
+} VisVec4 <read = VisVec4Read>;
+
+string VisVec4Read(VisVec4 &value) {
+    string s;
+    SPrintf(s, "%f / %f / %f / %f", value.x.value, value.y.value, value.z.value, value.w.value);
+    return s;
+};
+
+typedef struct {
+    VisString name;
+    int16 parent;
+
+    VisVec3 local_space_position;
+    VisVec4 local_space_orientation;
+
+    VisVec3 inverse_object_space_position;
+    VisVec4 inverse_object_space_orientation;
+} VisBone <read = VisBoneRead>;
+
+string VisBoneRead(VisBone &value) {
+    string s;
+    SPrintf(s, "%s / %d", value.name.value, value.parent);
+    return s;
+};

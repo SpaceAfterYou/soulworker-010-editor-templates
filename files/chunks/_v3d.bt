@@ -1,0 +1,41 @@
+#include "vis_string.bt"
+
+local uint m_scene_version = 14;
+local uint ver = 0;
+
+if (m_scene_version >= 4) {
+    uint32 version;
+    ver = version;
+}
+
+if (version >= 6) {
+    double world_coordinate[3];
+}
+
+if (m_scene_version >= 16) {
+    float unit_scaling;
+}
+
+VisString szV3DFilename;
+
+if (ver >= 1) {
+    byte color[4];
+}
+
+if (ver >= 2) {
+    uint32 iLightmapEquation;
+}
+
+if (ver == 4) {
+    byte bAssumeSRGB;
+} else if (ver > 4) {
+    int32 iMode;
+}
+
+if (ver >= 2) {
+    VisString szLGFilename;
+}
+
+if (m_scene_version >= 12) {
+    VisString szShaderProvider;
+}

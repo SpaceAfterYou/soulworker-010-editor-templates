@@ -1,0 +1,51 @@
+char magick[4];
+uint32 version;
+
+char[] Strrev(char input[]) {
+    local char temp;
+    local int len = Strlen(input);
+    char output[len];
+    local int halfLen = len/2;
+    local int i, k;
+    for(i = 0,k=len-1 ; i < halfLen+1; i++,k--)
+    {
+        output[k] = input[i];
+        output[i] = input[k];
+    }
+    return output;
+}
+
+typedef struct {
+    int32 depth;
+    char id[4];
+} stack <read=stack_read>;
+
+string stack_read(stack &value) {
+    string s;
+    SPrintf(s, "%s", Strrev(value.id));
+    return s;
+};
+
+typedef struct {
+    stack begin;
+    uint32 size;
+    byte buffer[size];
+    stack end;
+} chunk_data <read=chunk_data_read>;
+
+
+string chunk_data_read (chunk_data &value) {
+    string s;
+    SPrintf(s, "%s", Strrev(value.begin.id));
+    return s;
+};
+
+local int64 offset;
+while(!FEof()) {
+    chunk_data chunk;
+
+    offset = FTell();
+    if (ReadUInt() == -1) { break; }    
+
+    FSeek(offset);
+}

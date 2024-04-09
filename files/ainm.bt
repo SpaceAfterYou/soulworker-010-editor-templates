@@ -1,0 +1,3 @@
+byte version;
+uint32 sanity;
+byte connect_to_pysics_world;
